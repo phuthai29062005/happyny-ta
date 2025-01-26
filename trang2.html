@@ -19,28 +19,47 @@
             background-position: center;
             height: 100vh;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            gap: 20px;
         }
 
         .container-left {
-            width: 40%;
+            width: 100%;
             max-width: 600px;
             background: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
-            padding: 15px;
+            padding: 20px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            margin-left: 20px;
         }
 
         .video-container {
-            width: 80%;
+            width: 100%;
             max-width: 900px;
             background: rgba(0, 0, 0, 0.5);
             border-radius: 10px;
-            padding: 15px;
+            padding: 20px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            margin-right: 20px;
             text-align: center;
         }
 
@@ -63,31 +82,79 @@
             height: 450px;
             border-radius: 10px;
         }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container-left, .video-container {
+                width: 90%;
+                max-width: none;
+                margin-bottom: 20px;
+            }
+
+            iframe {
+                height: 250px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: clamp(0.9rem, 3vw, 1.2rem);
+            }
+        }
+
+        @media (min-width: 768px) and (orientation: landscape) {
+            .content-wrapper {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+            .container-left, .video-container {
+                width: 48%;
+            }
+
+            iframe {
+                height: 350px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container-left">
-        <h1>Gửi bạn Thanh!</h1>
-        <h2>
-            Vậy là 1 năm nữa đã khép lại. Đối với bạn lại là 1 năm đầy biến động mang theo đầy thăng trầm và nước mắt. 
-            Những việc cậu đã trải qua thật là khó khăn, cảm tưởng như chẳng thể nào vượt qua được. 
-            1 năm này cũng là 1 năm mà tớ cũng không thể đồng hành nhiều với bạn. 
-            Bạn đã nghĩ Thanh sẽ khó lòng vượt qua được nhưng sau khi nhìn lại 1 năm của Thảo Anh thì bạn cũng yên tâm hơn phần nào. 
-            Bạn thấy được 1 Thảo Anh hoàn toàn mới, yêu thương bản thân nhiều hơn, có những người bạn mới. 
-            Có lẽ hành trình của Thảo Anh sắp tới có thể sẽ khó khăn hơn mọi người nhưng mà mong Thanh sẽ nhớ luôn có những người luôn luôn ở đây để giúp đỡ bạn vượt qua được khó khăn. 
-            Năm mới, tớ gửi tới Thảo Anh những lời chúc tốt đẹp nhất. Chúc Thanh có cuộc sống tốt đẹp hơn, con đường phía trước trải đầy hoa danh cho bạn. 
-            Chúc bạn Thanh ngày càng xinh đẹp, vui vẻ hơn không phải lo âu về vấn đề gì. 
-            Dù tương lai có khó khăn thì tớ vẫn luôn ở đây để chia sẻ và đồng hành cùng cậu. 
-            Mong rằng năm mới bạn sẽ có nhiều cơ hội hơn để đồng hành cũng như chia sẻ với Thanh. 
-            Lời cuối cũng không biết nói gì chỉ mong năm mới sẽ nhẹ nhàng với Thảo Anh hơn, yêu thương Thảo Anh hơn. 
-            Văn bạn hơi lủng củng Thảo Anh đừng chê nhé.
-        </h2>
-        <h1>Happy New Year! Best wishes to you!</h1>
-    </div>
-    <div class="video-container">
-        <h1>Video for you</h1>
-        <!-- Embed YouTube Video with autoplay and loop -->
-        <iframe src="https://www.youtube.com/embed/C9psrnSfTRQ?autoplay=1&loop=1&playlist=C9psrnSfTRQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="main-container">
+        <div class="content-wrapper">
+            <div class="container-left">
+                <h1>Gửi bạn Thanh!</h1>
+                <h2>
+                    Vậy là 1 năm nữa đã khép lại. Đối với bạn lại là 1 năm đầy biến động mang theo đầy thăng trầm và nước mắt. 
+                    Những việc cậu đã trải qua thật là khó khăn, cảm tưởng như chẳng thể nào vượt qua được. 
+                    1 năm này cũng là 1 năm mà tớ cũng không thể đồng hành nhiều với bạn. 
+                    Bạn đã nghĩ Thanh sẽ khó lòng vượt qua được nhưng sau khi nhìn lại 1 năm của Thảo Anh thì bạn cũng yên tâm hơn phần nào. 
+                    Bạn thấy được 1 Thảo Anh hoàn toàn mới, yêu thương bản thân nhiều hơn, có những người bạn mới. 
+                    Có lẽ hành trình của Thảo Anh sắp tới có thể sẽ khó khăn hơn mọi người nhưng mà mong Thanh sẽ nhớ luôn có những người luôn luôn ở đây để giúp đỡ bạn vượt qua được khó khăn. 
+                    Năm mới, tớ gửi tới Thảo Anh những lời chúc tốt đẹp nhất. Chúc Thanh có cuộc sống tốt đẹp hơn, con đường phía trước trải đầy hoa danh cho bạn. 
+                    Chúc bạn Thanh ngày càng xinh đẹp, vui vẻ hơn không phải lo âu về vấn đề gì. 
+                    Dù tương lai có khó khăn thì tớ vẫn luôn ở đây để chia sẻ và đồng hành cùng cậu. 
+                    Mong rằng năm mới bạn sẽ có nhiều cơ hội hơn để đồng hành cũng như chia sẻ với Thanh. 
+                    Lời cuối cũng không biết nói gì chỉ mong năm mới sẽ nhẹ nhàng với Thảo Anh hơn, yêu thương Thảo Anh hơn. 
+                    Văn bạn hơi lủng củng Thảo Anh đừng chê nhé.
+                </h2>
+                <h1>Happy New Year! Best wishes to you!</h1>
+            </div>
+            <div class="video-container">
+                <h1>Video for you</h1>
+                <iframe src="https://www.youtube.com/embed/C9psrnSfTRQ?autoplay=1&loop=1&playlist=C9psrnSfTRQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
 </body>
 </html>
