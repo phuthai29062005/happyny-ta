@@ -12,7 +12,7 @@
             box-sizing: border-box;
         }
 
-   body {
+        body {
             font-family: 'Arial', sans-serif;
             background-image: url(https://4kwallpapers.com/images/walls/thumbs_3t/19263.jpg);
             background-size: cover;
@@ -26,67 +26,16 @@
             text-align: center;
         }
 
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    max-width: 800px;
-    gap: 20px;
-    text-align: center;
-}
-
-.message {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.message h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.message p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-}
-
-.image-container img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* Nút điều hướng */
-.buttons {
-    margin-top: 20px;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .message h1 {
-        font-size: 1.5rem;
-    }
-
-    .message p {
-        font-size: 1rem;
-    }
-}
+        h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: clamp(2rem, 5vw, 4rem); /* Kích thước chữ linh hoạt */
+            color: bisque;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Thêm bóng chữ */
+            margin-bottom: 20px;
+            position: fixed;
+            bottom: 800px;
+            right: 180px;
+        }
 
         .container-left, .container-right {
             width: 60%;
@@ -106,6 +55,97 @@ button:hover {
         .container-right {
             left: 1000px;
         }
+
+        h2 {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        .image-container-left, .image-container-right {
+            position: absolute;
+            bottom: 80px;
+            width: 50%;
+            height: 60vh; /* Giảm chiều cao của ảnh */
+            overflow: hidden;
+        }
+
+        .image-container-left {
+            left: 38px;
+        }
+
+        .image-container-right {
+            right: 38px;
+        }
+
+        .image-slide {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Giữ tỷ lệ gốc của ảnh */
+        }
+
+        .button-container {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .left-buttons, .right-buttons {
+            position: absolute;
+            bottom: 10px; /* Đặt các nút gần dưới ảnh */
+            display: flex;
+            gap: 10px; /* Tạo khoảng cách giữa các nút */
+        }
+
+        .left-buttons {
+            left: 50%;
+            transform: translateX(-50%); /* Đặt các nút ở giữa của container bên trái */
+        }
+
+        .right-buttons {
+            right: 50%;
+            transform: translateX(50%); /* Đặt các nút ở giữa của container bên phải */
+        }
+
+        button {
+            padding: 3px 15px;
+            font-size: 1.2rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: scale(1.1);
+        }
+
+        /* Media Query */
+        @media (max-width: 768px) {
+            .container-left, .container-right {
+                width: 90%;
+                bottom: 20px;
+                left: 0;
+                right: 0;
+            }
+
+            .image-container-left, .image-container-right {
+                width: 80%;
+            }
+
+            h1 {
+                font-size: clamp(1.5rem, 5vw, 3rem);
+            }
+
+            .left-buttons, .right-buttons {
+                bottom: -400px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -122,6 +162,12 @@ button:hover {
         <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/IMG_7659.jpg" alt="Image 3" class="image-slide" />
         <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/IMG_7660.jpg" alt="Image 4" class="image-slide" />
         <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/IMG_7662.jpg" alt="Image 5" class="image-slide" />
+        <div class="button-container">
+            <div class="left-buttons">
+                <button onclick="previousImageLeft()">Back</button>
+                <button onclick="nextImageLeft()">Next</button>
+            </div>
+        </div>
     </div>
 
     <div class="container-right">
@@ -143,16 +189,11 @@ button:hover {
         <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/9.jpg" alt="Image 12" class="image-slide" />
         <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/11.jpg" alt="Image 11" class="image-slide" />
         <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/14.jpg" alt="Image 12" class="image-slide" />
-    </div>
-
-    <div class="button-container">
-        <div class="left-buttons">
-            <button onclick="previousImageLeft()">Back</button>
-            <button onclick="nextImageLeft()">Next</button>
-        </div>
-        <div class="right-buttons">
-            <button onclick="previousImageRight()">Back</button>
-            <button onclick="nextImageRight()">Next</button>
+        <div class="button-container">
+            <div class="right-buttons">
+                <button onclick="previousImageRight()">Back</button>
+                <button onclick="nextImageRight()">Next</button>
+            </div>
         </div>
     </div>
 
