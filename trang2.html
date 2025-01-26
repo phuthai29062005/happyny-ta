@@ -10,10 +10,16 @@
             padding: 0;
             box-sizing: border-box;
         }
+/* CSS chung */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
+body {
     font-family: Arial, sans-serif;
-    background-color: #fdf6e4;
+    background-color: #f4f4f4;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,33 +29,42 @@
 
 .wrapper {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
     width: 90%;
-    max-width: 800px;
+    max-width: 1200px;
     gap: 20px;
-    text-align: center;
 }
 
-.message {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 20px;
+/* Nội dung văn bản */
+.container-left {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.message h1 {
-    font-size: 2rem;
+.container-left h1 {
+    font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
-.message p {
-    font-size: 1.2rem;
+.container-left h2 {
+    font-size: 1rem;
     line-height: 1.6;
 }
 
-.image-container img {
+/* Video */
+.video-container {
+    flex: 1;
+    text-align: center;
+}
+
+.video-container iframe {
     width: 100%;
+    aspect-ratio: 16 / 9;
     border-radius: 10px;
 }
 
@@ -61,7 +76,7 @@
 button {
     padding: 10px 20px;
     font-size: 1rem;
-    background-color: #28a745;
+    background-color: #007BFF;
     color: white;
     border: none;
     border-radius: 5px;
@@ -69,19 +84,26 @@ button {
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #0056b3;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .message h1 {
-        font-size: 1.5rem;
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .message p {
-        font-size: 1rem;
+    .container-left, .video-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .container-left h1, .container-left h2 {
+        font-size: 1.2rem;
     }
 }
+
     </style>
 </head>
 <body>
