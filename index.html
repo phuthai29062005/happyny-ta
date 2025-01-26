@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy new year 2025</title>
+    <style>
+        /* Reset các thuộc tính mặc định */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-image: url(https://4kwallpapers.com/images/walls/thumbs_3t/20219.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 8rem); /* Tạo kích thước linh hoạt cho chữ */
+            color: blanchedalmond;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Thêm bóng chữ */
+
+            /* Hiệu ứng mờ mờ ảo ảo */
+            opacity: 0;
+            animation: fadeEffect 4s infinite; /* Lặp vô hạn */
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+
+            /* Định vị góc phải dưới màn hình */
+            position: fixed;
+            bottom: 5vh; /* Khoảng cách so với cạnh dưới */
+            right: 5vw; /* Khoảng cách so với cạnh phải */
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: scale(1.1); /* Phóng to nhẹ khi hover */
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: clamp(2.5rem, 8vw, 5rem); /* Tự động nhỏ hơn trên màn hình nhỏ */
+            }
+
+            button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Hiệu ứng mờ mờ ảo ảo */
+        @keyframes fadeEffect {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px); /* Dịch lên */
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(0); /* Trở lại vị trí ban đầu */
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(20px); /* Dịch xuống */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Happy new year</h1>
+        <button onclick="window.location.href='trang1.html'">Tiếp tục</button>
+    </div>
+</body>
+</html>

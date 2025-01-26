@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tổng kết 1 năm</title>
+    <style>
+        /* Reset mặc định */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url(https://4kwallpapers.com/images/walls/thumbs_3t/19263.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: clamp(2rem, 5vw, 4rem); /* Kích thước chữ linh hoạt */
+            color:bisque;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Thêm bóng chữ */
+            margin-bottom: 20px;
+
+            position: fixed;
+            bottom: 800px; /* Khoảng cách so với cạnh dưới */
+            right: 180px; /* Khoảng cách so với cạnh phải */
+        }
+
+        .container-left {
+            width: 60%; /* Giảm độ rộng của container */
+            max-width: 450px; /* Giới hạn độ rộng tối đa */
+            background: rgba(255, 255, 255, 0.8); /* Nền trong suốt */
+            border-radius: 10px;
+            padding: 15px; /* Giảm padding */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Hiệu ứng đổ bóng */
+            
+            position: fixed;
+            bottom: 670px; /* Khoảng cách so với cạnh dưới */
+            right: 1000px; /* Khoảng cách so với cạnh phải */
+        }
+
+        .container-right {
+            width: 60%; /* Giảm độ rộng của container */
+            max-width: 450px; /* Giới hạn độ rộng tối đa */
+            background: rgba(255, 255, 255, 0.8); /* Nền trong suốt */
+            border-radius: 10px;
+            padding: 15px; /* Giảm padding */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Hiệu ứng đổ bóng */
+            
+            position: fixed;
+            bottom: 670px; /* Khoảng cách so với cạnh dưới */
+            left: 1000px; /* Khoảng cách so với cạnh phải */
+        }
+
+        h2 {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        /* Thêm phần cho ảnh bên trái */
+        .image-container-left {
+            position: absolute; 
+            bottom: 80px; /* Khoảng cách từ dưới lên */
+            left: 38px; /* Khoảng cách từ bên trái màn hình */
+            width: 50%; /* Chiếm 50% chiều rộng của màn hình */
+            height: 60vh; /* Chiều cao của ảnh bằng 60% chiều cao của viewport */
+            overflow: hidden;
+        }
+
+        /* Thêm phần cho ảnh bên phải */
+        .image-container-right {
+            position: absolute; 
+            bottom: 80px; /* Khoảng cách từ dưới lên */
+            right: 38px; /* Khoảng cách từ bên phải màn hình */
+            width: 50%; /* Chiếm 50% chiều rộng của màn hình */
+            height: 60vh; /* Chiều cao của ảnh bằng 60% chiều cao của viewport */
+            overflow: hidden;
+        }
+
+        .image-slide {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Giữ nguyên tỷ lệ ảnh và thu nhỏ để vừa với container */
+            display: none; /* Ảnh ẩn đi mặc định */
+        }
+
+        /* Phần button ở dưới ảnh */
+        .button-container {
+            position: absolute; 
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        /* Phần button bên trái */
+        .left-buttons {
+            position: absolute;
+            bottom: -470px;
+            left: 355px; /* Điều chỉnh vị trí button trái */
+            display: flex;
+        }
+
+        /* Phần button bên phải */
+        .right-buttons {
+            position: absolute;
+            bottom: -470px;
+            right: 355px; /* Điều chỉnh vị trí button phải */
+            display: flex;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+            z-index: 10;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: scale(1.1); /* Phóng to nhẹ khi hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Tổng kết 1 năm của Thanh cute xinh gái</h1>
+    <button onclick="window.location.href='trang2.html'">Tiếp tục</button>
+    <div class="container-left">
+        <h2>Năm nay Thảo Anh đã đi du lịch được các nước</h2>
+    </div>
+
+    <!-- Phần ảnh bên trái -->
+    <div class="image-container-left">
+        <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/IMG_7661.jpg" alt="Image 1" class="image-slide" />
+        <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/IMG_7658.jpg" alt="Image 2" class="image-slide" />
+        <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/IMG_7659.jpg" alt="Image 3" class="image-slide" />
+        <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/IMG_7660.jpg" alt="Image 4" class="image-slide" />
+        <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/IMG_7662.jpg" alt="Image 5" class="image-slide" />
+    </div>
+
+    <div class="container-right">
+        <h2>Những tấm ảnh xinh xẻo của Thảo Anh</h2>
+    </div>
+
+    <!-- Phần ảnh bên phải -->
+    <div class="image-container-right">
+        <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/5.jpg" alt="Image 1" class="image-slide" />
+        <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/10.jpg" alt="Image 2" class="image-slide" />
+        <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/1.jpg" alt="Image 3" class="image-slide" />
+        <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/2.jpg" alt="Image 4" class="image-slide" />
+        <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/13.jpg" alt="Image 5" class="image-slide" />
+        <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/12.jpg" alt="Image 6" class="image-slide" />
+        <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/8.jpg" alt="Image 7" class="image-slide" />
+        <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/7.jpg" alt="Image 8" class="image-slide" />
+        <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/4.jpg" alt="Image 9" class="image-slide" />
+        <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/3.jpg" alt="Image 10" class="image-slide" />
+        <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/6.jpg" alt="Image 11" class="image-slide" />
+        <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/9.jpg" alt="Image 12" class="image-slide" />
+        <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/11.jpg" alt="Image 11" class="image-slide" />
+        <img src="https://github.com/phuthai29062005/happyny-ta/raw/main/14.jpg" alt="Image 12" class="image-slide" />
+    </div>
+    <!-- Phần button -->
+    <div class="button-container">
+        <!-- Button bên trái -->
+        <div class="left-buttons">
+            <button onclick="previousImageLeft()">Back</button>
+            <button onclick="nextImageLeft()">Next</button>
+        </div>
+
+        <!-- Button bên phải -->
+        <div class="right-buttons">
+            <button onclick="previousImageRight()">Back</button>
+            <button onclick="nextImageRight()">Next</button>
+        </div>
+    
+    </div>
+
+</body>
+
+<script>
+    let currentImageIndexLeft = 0;
+    let currentImageIndexRight = 0;
+    const imagesLeft = document.querySelectorAll('.image-container-left .image-slide');
+    const imagesRight = document.querySelectorAll('.image-container-right .image-slide');
+
+    function showImageLeft(index) {
+        // Ẩn tất cả các ảnh bên trái
+        imagesLeft.forEach((image) => {
+            image.style.display = 'none';
+        });
+        imagesLeft[index].style.display = 'block';
+    }
+
+    function showImageRight(index) {
+        // Ẩn tất cả các ảnh bên phải
+        imagesRight.forEach((image) => {
+            image.style.display = 'none';
+        });
+        imagesRight[index].style.display = 'block';
+    }
+
+    function previousImageLeft() {
+        currentImageIndexLeft = (currentImageIndexLeft - 1 + imagesLeft.length) % imagesLeft.length;
+        showImageLeft(currentImageIndexLeft);
+    }
+
+    function nextImageLeft() {
+        currentImageIndexLeft = (currentImageIndexLeft + 1) % imagesLeft.length;
+        showImageLeft(currentImageIndexLeft);
+    }
+
+    function previousImageRight() {
+        currentImageIndexRight = (currentImageIndexRight - 1 + imagesRight.length) % imagesRight.length;
+        showImageRight(currentImageIndexRight);
+    }
+
+    function nextImageRight() {
+        currentImageIndexRight = (currentImageIndexRight + 1) % imagesRight.length;
+        showImageRight(currentImageIndexRight);
+    }
+
+    // Hiển thị ảnh đầu tiên khi tải trang
+    showImageLeft(currentImageIndexLeft);
+    showImageRight(currentImageIndexRight);
+</script>
+
+</html>
