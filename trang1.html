@@ -132,18 +132,28 @@
                 bottom: 20px;
                 left: 0;
                 right: 0;
+                position: relative; /* Đảm bảo các phần tử không bị chồng lên nhau */
             }
 
             .image-container-left, .image-container-right {
-                width: 80%;
+                width: 90%; /* Tăng chiều rộng của ảnh */
+                height: 50vh; /* Điều chỉnh chiều cao ảnh để phù hợp hơn */
             }
 
             h1 {
                 font-size: clamp(1.5rem, 5vw, 3rem);
+                position: relative; /* Điều chỉnh vị trí của h1 */
+                bottom: 0;
+                right: 0;
             }
 
             .left-buttons, .right-buttons {
-                bottom: -400px;
+                bottom: -20px; /* Di chuyển các nút lên trên một chút */
+            }
+
+            /* Các thay đổi cho các phần tử chứa text */
+            h2 {
+                font-size: clamp(1rem, 3vw, 1.5rem); /* Điều chỉnh kích thước chữ */
             }
         }
     </style>
