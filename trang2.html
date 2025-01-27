@@ -17,22 +17,25 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            overflow: hidden;
         }
 
         .main-container {
             display: flex;
             flex-direction: column;
-            width: 100%;
-            height: 100%;
+            width: 95%; /* Đảm bảo không bị tràn viền */
+            max-width: 1200px;
+            height: auto;
             justify-content: center;
             align-items: center;
-            padding: 10px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.192); /* Giảm độ sáng, mờ hơn */
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .content-wrapper {
@@ -40,91 +43,78 @@
             flex-wrap: wrap;
             justify-content: space-between;
             width: 100%;
-            max-width: 80%;
-            gap: 1%;
+            gap: 20px;
         }
 
         .container-left {
-            width: 100%;
-            max-width: 50%;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 2%;
-            padding: 4%;
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(233, 235, 232, 0.8);
+            border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         .video-container {
-            width: 100%;
-            max-width: 50%;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
             padding: 20px;
+            background: rgba(127, 125, 125, 0.7);
+            border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
             text-align: center;
         }
 
         h1 {
-            font-size: 1.8rem;
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem); /* Nhỏ hơn trước một chút */
             color: brown;
-            margin-bottom: 3%;
+            margin-bottom: 15px;
+            text-align: center;
         }
 
         h2 {
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            font-size: clamp(0.8rem, 2.6vw, 1.4rem);
+            font-size: clamp(0.9rem, 1.8vw, 1.2rem); /* Văn bản nhỏ hơn trước */
             color: black;
-            margin-bottom: 5%;
             text-align: justify;
+            line-height: 1.6;
         }
 
         iframe {
             width: 100%;
-            height: 60%;
-            border-radius: 2%;
+            height: auto;
+            aspect-ratio: 16 / 9; /* Tăng kích thước video */
+            border-radius: 10px;
         }
 
-        /* Responsive design */
-        @media (max-width: 100hv) {
+        /* Responsive Design */
+        @media (max-width: 768px) {
             .content-wrapper {
                 flex-direction: column;
                 align-items: center;
             }
 
             .container-left, .video-container {
-                width: 90%;
-                max-width: none;
-                margin-bottom: 20px;
+                max-width: 90%;
             }
 
             iframe {
-                height: 250px;
-            }
-
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            h2 {
-                font-size: clamp(0.9rem, 3vw, 1.2rem);
+                max-height: 350px; /* Video lớn hơn ở màn hình nhỏ */
             }
         }
 
-        @media (min-width: 768px) and (orientation: landscape) {
-            .content-wrapper {
-                flex-direction: row;
-                align-items: flex-start;
-            }
-
-            .container-left, .video-container {
-                width: 48%;
-            }
-
-            iframe {
-                height: 350px;
+        @media (min-width: 1200px) {
+            .main-container {
+                max-width: 1400px;
             }
 
             h1 {
-                font-size: 1.8rem;
+                font-size: clamp(1.5rem, 3vw, 2rem);
+            }
+
+            h2 {
+                font-size: clamp(1rem, 2vw, 1.3rem);
             }
         }
     </style>
