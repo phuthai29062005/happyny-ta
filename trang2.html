@@ -10,14 +10,8 @@
             padding: 0;
             box-sizing: border-box;
         }
-/* CSS chung */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
+        body {
             font-family: Arial, Helvetica, sans-serif;
             background-image: url(https://4kwallpapers.com/images/walls/thumbs_3t/20228.jpg);
             background-size: cover;
@@ -31,83 +25,108 @@ body {
             overflow: hidden;
         }
 
-.wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 90%;
-    max-width: 1200px;
-    gap: 20px;
-}
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
 
-/* Nội dung văn bản */
-.container-left {
-    flex: 1;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-}
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 80%;
+            gap: 1%;
+        }
 
-.container-left h1 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
+        .container-left {
+            width: 100%;
+            max-width: 50%;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 2%;
+            padding: 4%;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
 
-.container-left h2 {
-    font-size: 1rem;
-    line-height: 1.6;
-}
+        .video-container {
+            width: 100%;
+            max-width: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
 
-/* Video */
-.video-container {
-    flex: 1;
-    text-align: center;
-}
+        h1 {
+            font-size: 1.8rem;
+            color: brown;
+            margin-bottom: 3%;
+        }
 
-.video-container iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 10px;
-}
+        h2 {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: clamp(0.8rem, 2.6vw, 1.4rem);
+            color: black;
+            margin-bottom: 5%;
+            text-align: justify;
+        }
 
-/* Nút điều hướng */
-.buttons {
-    margin-top: 20px;
-}
+        iframe {
+            width: 100%;
+            height: 60%;
+            border-radius: 2%;
+        }
 
-button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        /* Responsive design */
+        @media (max-width: 100hv) {
+            .content-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
 
-button:hover {
-    background-color: #0056b3;
-}
+            .container-left, .video-container {
+                width: 90%;
+                max-width: none;
+                margin-bottom: 20px;
+            }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
+            iframe {
+                height: 250px;
+            }
 
-    .container-left, .video-container {
-        width: 100%;
-        margin-bottom: 20px;
-    }
+            h1 {
+                font-size: 1.5rem;
+            }
 
-    .container-left h1, .container-left h2 {
-        font-size: 1.2rem;
-    }
-}
+            h2 {
+                font-size: clamp(0.9rem, 3vw, 1.2rem);
+            }
+        }
 
+        @media (min-width: 768px) and (orientation: landscape) {
+            .content-wrapper {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+            .container-left, .video-container {
+                width: 48%;
+            }
+
+            iframe {
+                height: 350px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
     </style>
 </head>
 <body>
